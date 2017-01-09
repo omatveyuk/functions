@@ -7,6 +7,24 @@ go below this docstring.
 PART ONE: Write your own function declarations - Part 1 questions aren't
 included in the doctest.
 
+    >>> is_hometown('Moscow')
+    True
+
+    >>> is_hometown('MOSCOW')
+    True
+
+    >>> is_hometown('San Francisco')
+    False
+
+    >>> make_fullname('Oxana', 'Matveyuk')
+    'Oxana Matveyuk'
+
+    >>> is_person_from_your_hometown('Moscow', 'Anastasia', 'Vasilyeva')
+    Hi, Anastasia Vasilyeva, we're from the same place!
+
+    >>> is_person_from_your_hometown('San Francisco', 'Meg', 'Rayan')
+    Hi, Meg Rayan, where are you from?
+
 PART TWO:
 
     >>> is_berry("blackberry")
@@ -42,26 +60,20 @@ PART TWO:
     >>> calculate_price(126, "MA")
     135.3
 
-    >>> is_hometown('Moscow')
-    True
-
-    >>> is_hometown('MOSCOW')
-    True
-
-    >>> is_hometown('San Francisco')
-    False
-
-    >>> make_fullname('Oxana', 'Matveyuk')
-    'Oxana Matveyuk'
-
-    >>> is_person_from_your_hometown('Moscow', 'Anastasia', 'Vasilyeva')
-    Hi, Anastasia Vasilyeva, we're from the same place!
-
-    >>> is_person_from_your_hometown('San Francisco', 'Meg', 'Rayan')
-    Hi, Meg Rayan, where are you from?
-
 PART THREE: Write your own function declarations - Part 3 questions aren't
 included in the doctest.
+
+    >>> append_list([1, 2, 3], 4, 5)
+    [1, 2, 3, 4, 5]
+
+    >>> append_list([], 1, 2)
+    [1, 2]
+
+    >>> append_list([1])
+    [1]
+
+    >>> outer("Balloonicorn")
+    ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
 
 """
 
@@ -232,6 +244,21 @@ def calculate_price(cost, state, tax=0.05):
 
 #>>> outer("Balloonicorn")
 #('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+
+def append_list(lst, *args):
+    """Append to list any numbers"""
+    for arg in args:
+        lst.append(arg)
+
+    return lst
+
+
+def outer(word):
+    """Use iiner function for multiplication an input word by 3"""
+    def multiply_by_3(outer_word):
+        return outer_word*3
+
+    return (word, multiply_by_3(word))
 
 
 ###############################################################################
