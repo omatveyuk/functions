@@ -186,6 +186,22 @@ def sign_and_parity(number):
 #    greeting.
 
 
+def full_title(name, job_title='Engineer'):
+    """Create full title which contains job title and name of a person"""
+    return job_title + " " + name
+
+
+def write_letter(recipient_name, job_title, sender_name):
+    """Print the letter
+
+        Dear JOB_TITLE RECIPIENT_NAME, I think you are amazing!
+        Sincerely, SENDER_NAME.
+
+    """
+    print "Dear " + full_title(recipient_name, job_title) + ", I think you are amazing!",
+    print "Sincerely, " + sender_name
+
+
 ###############################################################################
 
 # END OF PRACTICE: You can ignore everything below.
